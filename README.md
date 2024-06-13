@@ -19,3 +19,13 @@ If a candidate was found, it was saved to keyring file. Later on, in another too
 in the keyring to see which key was used.
 
 Even though nowadays SpyEye is but a distant memory, this technique can still be used to process other malware in similar fashion. 
+
+# MemoryLane 2: ApiNameHasher
+ApiNameHasher is one of our favourite tools, and we've used it in one form or another for the past 15 years or so. API name hashing is something
+quite commonly seen in various malwares, where the malware author tries to hinder the analysis process. ApiNameHasher has a good base, allowing us to
+hash all the exports of a single DLL, or every DLL under C:\Windows\System32.
+
+We've left in two different samples for a hashing function, one for a string of Lazarus related samples and one for BlackBubble.
+
+The Lazarus version contains inlined assembly, because sometimes it's just faster that way. The BlackBubble one matches a next-generation of StealthVector
+variants from APT41 that have not yet been publicly documented.
